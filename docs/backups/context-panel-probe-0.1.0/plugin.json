@@ -1,0 +1,1 @@
+{"name":"context-panel-probe","version":"0.1.0","description":"Temporary local probe for a conversation panel and host-provided chat identity.","mcpServers":"./.mcp.json","interface":{"displayName":"Context Panel Probe","shortDescription":"Panel and chat binding probe"}}

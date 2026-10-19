@@ -1,0 +1,1 @@
+{"name":"context-panel-probe","version":"0.3.2","description":"Local context usage panel with token counts, estimated categories, tools and instructions for the current Codex chat.","mcpServers":"./.mcp.json","interface":{"displayName":"Context Panel Probe","shortDescription":"Контекст текущего чата"}}

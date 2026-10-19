@@ -1,0 +1,1 @@
+{"name":"context-panel-probe-local","interface":{"displayName":"Context Panel Probe"},"plugins":[{"name":"context-panel-probe","source":{"source":"local","path":"./plugins/context-panel-probe"},"policy":{"installation":"AVAILABLE","authentication":"ON_INSTALL"},"category":"Developer Tools"}]}

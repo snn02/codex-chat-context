@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Контекст чата</title>
+<style>
+:root{color-scheme:light dark;--bg:#fff;--card:#fdfdfc;--ink:#20211f;--text:#5e5f5b;--muted:#92938c;--line:#e3e3df;--track:#eaeae7;--hover:#f2f2ef;--deferred:#c6c5ba;--error:#a34d32;font:13px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+@media(prefers-color-scheme:dark){:root{--bg:#20211f;--card:#252622;--ink:#edeee8;--text:#c4c6bc;--muted:#96998e;--line:#42443c;--track:#3a3d34;--hover:#32352c;--error:#e6a78c}}
+:root[data-theme="light"]{color-scheme:light;--bg:#fff;--card:#fdfdfc;--ink:#20211f;--text:#5e5f5b;--muted:#92938c;--line:#e3e3df;--track:#eaeae7;--hover:#f2f2ef;--error:#a34d32}
+:root[data-theme="dark"]{color-scheme:dark;--bg:#20211f;--card:#252622;--ink:#edeee8;--text:#c4c6bc;--muted:#96998e;--line:#42443c;--track:#3a3d34;--hover:#32352c;--error:#e6a78c}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);padding:10px}button{font:inherit;color:inherit}button{cursor:pointer}button:focus-visible,summary:focus-visible{outline:2px solid #4d79de;outline-offset:3px}button{border:0;background:transparent}main{max-width:610px;margin:auto;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px 14px}h1{font-size:15px;font-weight:600;margin:0}header{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}.model{font-size:11px;color:var(--muted);max-width:45%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.headline{display:flex;align-items:baseline;justify-content:space-between;gap:8px;margin-bottom:10px;font-variant-numeric:tabular-nums}.headline strong{font-size:20px;font-weight:500;white-space:nowrap}.capacity{font-size:13px;color:var(--muted);white-space:nowrap}.bar{height:6px;display:flex;gap:1px;border-radius:5px;background:var(--track);overflow:hidden;margin-bottom:14px}.segment{height:100%;min-width:0;flex-basis:0;flex-shrink:1}.legend{display:grid;gap:6px}.row{display:grid;grid-template-columns:10px minmax(0,1fr) 54px 46px;align-items:center;column-gap:8px;font-size:13px;min-height:22px}.swatch{width:10px;height:12px;border-radius:2px}.label{color:var(--text);text-align:left;padding:0;min-width:0;overflow-wrap:anywhere;line-height:1.3}.label.link{text-decoration-line:underline;text-decoration-style:dotted;text-decoration-color:var(--muted);text-underline-offset:4px}.tokens,.percent{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}.tokens{color:var(--muted)}.percent{color:var(--ink)}.secondary{margin-top:16px}.secondary .label,.secondary .percent{color:var(--muted)}.sections{margin-top:16px}details{margin:0 0 8px}summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:10px;color:var(--text);font-size:13px;min-height:24px}summary::-webkit-details-marker{display:none}summary:before{content:"";width:7px;height:7px;border-right:1.4px solid var(--muted);border-bottom:1.4px solid var(--muted);transform:rotate(-45deg);margin:0 2px 0 2px;flex-shrink:0}details[open]>summary:before{transform:rotate(45deg);margin-top:-4px}.count{margin-left:auto;color:var(--muted);font-variant-numeric:tabular-nums}.detail-list{margin:5px 0 0 22px;max-height:180px;overflow:auto;scrollbar-width:thin;scrollbar-color:var(--line) transparent;padding-right:8px}.detail-row{display:grid;grid-template-columns:minmax(0,1fr) 50px;gap:8px;margin:4px 0;color:var(--muted);font-size:12px}.detail-name{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.empty{font-size:12px;line-height:1.55;color:var(--muted);margin:8px 0}.footer{display:flex;align-items:center;justify-content:space-between;gap:10px;border-top:1px solid var(--line);padding-top:10px;margin-top:12px;font-size:11px;color:var(--muted)}.refresh{display:flex;align-items:center;gap:5px;padding:5px;border-radius:6px;color:var(--text);font-size:11px}.refresh:hover{background:var(--hover)}.refresh:disabled{opacity:.5;cursor:wait}.refresh svg{width:14px;height:14px}.status{font-size:12px;line-height:1.5;color:var(--muted);margin:0 0 12px}.status:empty{display:none}.status.error{color:var(--error)}#diagnostics{margin-top:12px;margin-bottom:0}#diagnostics summary{font-size:11px;color:var(--muted);min-height:20px}#diagnostic-body{font-size:11px;color:var(--muted);overflow-wrap:anywhere;line-height:1.6;margin:8px 0 0 24px}#diagnostic-body p{margin:5px 0}.badge{font-size:11px;color:var(--muted);margin-top:9px}.badge:empty{display:none}
+@media(max-width:420px){body{padding:8px}main{padding:14px 12px;border-radius:12px}.row{grid-template-columns:10px minmax(0,1fr) 50px 44px;column-gap:6px}.headline strong{font-size:18px}.capacity{font-size:12px}h1{font-size:14px}}
+@media(prefers-reduced-motion:no-preference){.segment{transition:flex-grow .25s ease}}
+.detail-open{display:block;width:100%;text-align:left;padding:2px 3px;border-radius:4px;color:inherit;font:inherit}.detail-open:hover{background:var(--hover);color:var(--ink);text-decoration:underline}.detail-open:disabled{opacity:.5;cursor:wait}
+</style>
+</head>
+<body>
+<main aria-label="Использование контекста текущего чата">
+  <header><h1>Контекст</h1><span class="model" id="model"></span></header>
+  <div class="headline"><strong id="usage">Загрузка…</strong><span class="capacity" id="capacity">— / —</span></div>
+  <div class="bar" id="bar" role="img" aria-label="Заполнение контекста ещё неизвестно"></div>
+  <p class="status" id="status" role="status" aria-live="polite">Подключение к Codex…</p>
+  <div class="legend" id="legend"></div>
+  <div class="legend secondary" id="deferred"></div>
+  <div class="badge" id="badge"></div>
+  <div class="sections" id="sections"></div>
+  <p class="status" id="file-status" role="status" aria-live="polite"></p>
+  <div class="footer"><span id="freshness">≈ Оценка по локальным данным</span><button class="refresh" id="refresh" title="Обновить данные" aria-label="Обновить данные"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M20 7v5h-5M4 17v-5h5"/><path d="M6 7a7 7 0 0 1 12-1l2 3M4 15l2 3a7 7 0 0 0 12-1"/></svg>Обновить</button></div>
+  <details id="diagnostics"><summary>Источники и точность</summary><div id="diagnostic-body">Ожидание первого снимка.</div></details>
+</main>
+<!--PANEL_SCRIPT-->
+</body></html>

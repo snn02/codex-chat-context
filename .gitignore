@@ -1,0 +1,13 @@
+# Generated local diagnostics and protocol schemas
+/.probe-schema/
+/probe-events.jsonl
+/probe-app-server-status.json
+/probe-new-chat-result.json
+/probe-switch-result.json
+
+# Dependencies and local environment
+node_modules/
+.env
+.env.*
+!.env.example
+*.log
